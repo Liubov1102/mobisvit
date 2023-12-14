@@ -1,0 +1,27 @@
+.link {
+    padding: 8px 24px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #001739;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 12px;
+    background: rgba(94, 170, 232, 0.34);
+    box-shadow: 0px 2px 4px -1px rgba(8, 87, 208, 0.25),
+        0px 4px 5px 0px rgba(8, 87, 208, 0.25),
+        0px 1px 10px 0px rgba(8, 87, 208, 0.25);
+}
+
+.link.active {
+    background: rgba(94, 170, 232);
+    padding: 4px 12px;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.link:hover:not(.active),
+.link:focus:not(.active) {
+    color: #fff;
+}
