@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const Box = styled.section`
-  margin: 0 auto;
-  padding: 10px;
+  padding: 30px;
+
   /* display: flex; */
   /* align-items: center;
   /* justify-content: center; */
@@ -11,8 +11,9 @@ export const Box = styled.section`
 
 export const Wrapper = styled.div`
   display: flex;
+  gap: 30px;
   margin-top: 30px;
-  /* justify-content: center; */
+  justify-content: center;
 `;
 
 export const Image = styled.img`
@@ -29,16 +30,26 @@ export const Description = styled.div`
   display: flex;
   flex-direction: column;
   flex-basis: fit-content;
-  margin-left: 40px;
+  gap: 8px;
+  padding: 30px 0px;
 `;
 
 export const Title = styled.h4`
-  font-weight: 500;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 36px */
+  //  font-weight: 500;
   margin: 0;
 `;
 
 export const Label = styled.p`
-  font-size: 12px;
+  font-size: 14px;
+  font-style: normal;
   font-weight: 500;
-  margin-bottom: 0px;
+  line-height: 24px; /* 171.429% */
+
+  // font-size: 12px;
+  //  font-weight: 500;
+  margin: 0px;
 `;

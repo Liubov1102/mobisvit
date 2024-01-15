@@ -123,13 +123,6 @@ const Catalog = () => {
         <div>{`${page} / ${total_pages}`}</div>
       </div> */}
 
-      <Pagination
-        onChangePage={(pageNum) => setPage(pageNum)}
-        totalProducts={filteredProducts?.length}
-        //  prodPage={prodPage}
-        //  paginate={paginate}
-        active={{ page }}
-      />
       {/* <TypeBar
             //    action={filterItem.action}
             filterItem={filterItem}
@@ -137,12 +130,19 @@ const Catalog = () => {
             menuItems={menuItems} /> */}
       {/* <SearchBox value={productName} onChange={updateQueryString} /> */}
       {isLoading ? <Loader /> : <Device items={currentProduct} />}
-      {/* {filteredProducts && filteredProducts.length > 0 ? (
-        <Device items={filteredProducts} />
+      {/* {currentProduct && currentProduct.length > 0 ? (
+        <Device items={currentProduct} />
       ) : (
         <div>По вашому запиту нічого не знайдено. Уточніть свій запит</div>
       )} */}
       {/* <Outlet /> */}
+      <Pagination
+        onChangePage={(pageNum) => setPage(pageNum)}
+        totalProducts={filteredProducts?.length}
+        //  prodPage={prodPage}
+        //  paginate={paginate}
+        active={{ page }}
+      />
     </Wrapper>
   );
 };

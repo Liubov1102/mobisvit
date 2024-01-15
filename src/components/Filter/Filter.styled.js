@@ -5,6 +5,7 @@ export const Label = styled.label`
   display: inline-flex;
   align-items: center;
   position: relative;
+  margin-bottom: 30px;
 `;
 
 export const Input = styled.input`

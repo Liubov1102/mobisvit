@@ -18,11 +18,14 @@ import {
   CardWrapper,
   ProductName,
   Box,
-  ProductPrice,
+  ProductText,
+  ProductImg,
 } from "./Device.styled";
 import Loader from "../Loader/Loader";
 
 export const Device = ({ items = [], ...otherProps }) => {
+  // const { items = [] } = useGetProductByIdQuery(id);
+  const { img, name, title, price, category, description } = items;
   const navigate = useNavigate();
   const location = useLocation();
   const { isFetching } = useGetProductsQuery();
@@ -61,7 +64,12 @@ export const Device = ({ items = [], ...otherProps }) => {
 
       <Container>
         {items?.map((item) => (
-          <CardWrapper key={item.id} {...otherProps}>
+          <CardWrapper
+            key={item.id}
+            {...otherProps}
+            // width={"240px"}
+            style={{ width: "240px" }}
+          >
             <Link
               to={`/catalog/${item.id}`}
 
@@ -81,11 +89,19 @@ export const Device = ({ items = [], ...otherProps }) => {
               // description={description}
               {...otherProps}
             /> */}
-              <img src={item.img} alt="" width={"150"} />
+              {/* <img
+                src={
+                  item.img
+                    ? item.img
+                    : "https://upload.wikimedia.org/wikipedia/commons/0/07/Advanced_mobile_features_graphic.svg"
+                }
+                alt={item.name}
+              /> */}
+              <ProductImg src={item.img} alt="" width={"240px"} />
               <ProductName>{item.title}</ProductName>
               <ProductName>{item.name}</ProductName>
-              <ProductName>{item.category}</ProductName>
-              <ProductPrice>{item.price} грн.</ProductPrice>
+              <ProductText>{item.category}</ProductText>
+              <ProductName>{item.price} грн.</ProductName>
             </Link>
             {/* <button
                 //  style={{ display: "none" }}

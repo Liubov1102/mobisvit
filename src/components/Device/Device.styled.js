@@ -2,17 +2,20 @@ import styled from "styled-components";
 
 export const Box = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 30px;
+  // flex-direction: column;
+  // gap: 30px;
 `;
 export const Container = styled.div`
   display: flex;
-  /* justify-content: center; */
+  // justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
+  //weight: calc((100% - 60px) / 3);
 `;
 
 export const CardWrapper = styled.article`
+  // weight: 240px;
+  height: auto;
   border: 1px solid black;
   border-radius: 4px;
   transition: all 1s ease;
@@ -34,9 +37,13 @@ export const ProductName = styled.h4`
   margin-bottom: 0;
   color: #001739;
 `;
-export const ProductPrice = styled.h4`
+export const ProductText = styled.p`
   padding: 4px;
   margin-top: 8px;
   margin-bottom: 0;
   color: #001739;
+`;
+export const ProductImg = styled.img`
+  //weight: 240px;
+  height: auto;
 `;

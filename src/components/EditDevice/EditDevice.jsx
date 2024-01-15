@@ -7,6 +7,7 @@ import { CreateDeviceForm } from "../CreateDeviceForm/CreateDeviceForm";
 import useShowModal from "../../hooks/useModal";
 //import Modal from "../Modal/Modal";
 import { Modal, Overlay } from "./EditDevice.styled";
+import { Box } from "../Auth/RegisterForm.styled";
 
 export const EditDevice = ({ onSave }) => {
   // const { showModal, toggleModal } = useShowModal(true);
@@ -39,17 +40,19 @@ export const EditDevice = ({ onSave }) => {
     //   <Modal>
     <>
       {product && (
-        <CreateDeviceForm
-          initialValues={{
-            name: product.name,
-            price: product.price,
-            category: product.category,
-            description: product.description,
-          }}
-          id={productId}
-          btnText="Сохранить изменения"
-          onSubmit={handleUpdateProduct}
-        />
+        <Box>
+          <CreateDeviceForm
+            initialValues={{
+              name: product.name,
+              price: product.price,
+              category: product.category,
+              description: product.description,
+            }}
+            id={productId}
+            btnText="Зберегти зміни"
+            onSubmit={handleUpdateProduct}
+          />
+        </Box>
       )}
 
       {/* <button type="button" onClick={closeModal}>

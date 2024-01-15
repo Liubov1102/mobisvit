@@ -2,7 +2,8 @@ import { Formik, Form, Field } from "formik";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useAddProductMutation } from "../../redux/productsSlice";
-import { Button, Input, Label } from "./CreateDeviceForm.styled";
+import { Button } from "../ui/Button";
+import { Forma, Input, Label } from "./CreateDeviceForm.styled";
 
 // export const CreateDeviceForm = () => {
 //   const navigate = useNavigate();
@@ -75,6 +76,20 @@ export const CreateDeviceForm = ({
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       {({ isSubmitting }) => (
         <Form>
+          <Label htmlFor="img">
+            foto
+            <Input
+              name="img"
+              type="url"
+              // type="file"
+              id="img"
+              //  autoComplete="off"
+              multiple
+              //  accept=".jpg, .jpeg, .png"
+              // accept="image/png, image/jpeg"
+            />
+          </Label>
+
           <Label htmlFor="name">
             назва
             <Input name="name" type="text" id="name" autoComplete="off" />

@@ -13,6 +13,7 @@ import DeletingProduct from "../DeletingProduct/DeletingProduct";
 import { EditDevice } from "../EditDevice/EditDevice";
 import { EditProductModal } from "../EditProductModal/EditProductModal";
 import Modal from "../Modal/Modal";
+import { Button } from "../ui/Button";
 
 import {
   Box,
@@ -74,8 +75,8 @@ const DeviceDetails = () =>
             {/* <EditProductModal toggleModal={toggleModal} /> */}
           </Modal>
         )}
+        <BackLink to={goBack}>повернутися назад</BackLink>
         <Box>
-          <BackLink to={goBack}>повернутися назад</BackLink>
           <Wrapper>
             <Image
               src={
@@ -90,30 +91,31 @@ const DeviceDetails = () =>
               <Title>{title}</Title>
               <Title>{price} грн.</Title>
               <Label>{category}</Label>
-              <Label>{description}</Label>
+              <Label>опис: {description}</Label>
               {/* <Label>Стандарт зв'язку:</Label>
           <Label>Оперативна пам'ять: </Label>
           <Label>Кількість SIM-карток:</Label> */}
             </Description>
           </Wrapper>
-          <button
-            type="button"
-            onClick={toggleModal}
-            // onClick={() => deleteProduct(id)}
-            // disabled={isLoading}
-            // navigate={"/catalog"}
-          >
-            Удалить
-          </button>
-
-          {/* <Link to={`/catalog/edit/${id}`}> */}
-          <button
-            type="button"
-            onClick={() => navigate(`/catalog/edit/${id}`)}
-            // onClick={toggleModal}
-          >
-            Редактировать
-          </button>
+          <Wrapper>
+            <Button
+              type="button"
+              onClick={toggleModal}
+              // onClick={() => deleteProduct(id)}
+              // disabled={isLoading}
+              // navigate={"/catalog"}
+            >
+              Видалити
+            </Button>
+            {/* <Link to={`/catalog/edit/${id}`}> */}
+            <Button
+              type="button"
+              onClick={() => navigate(`/catalog/edit/${id}`)}
+              // onClick={toggleModal}
+            >
+              Редагувати
+            </Button>
+          </Wrapper>
           {/* </Link> */}
         </Box>
         {/* <ProductItem /> */}
